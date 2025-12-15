@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Calendar, Clock, User, Mail, Phone, CheckCircle, ArrowRight, Star, Shield, Users, Link} from 'lucide-react';
+import { TextAnimate } from './components/TextMotion';
 
 export default function BookingApp() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -75,13 +76,10 @@ export default function BookingApp() {
         {/* Hero Section */}
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Your Health, Our Priority
-            </h1>
-            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-              Experience professional healthcare services with convenient online booking. 
-              Schedule your appointment in minutes.
-            </p>
+            <TextAnimate 
+              firstText="Your Health, Our Priority"
+              lastText="Experience professional healthcare services with convenient online booking. Schedule your appointment in minutes."
+            />
             <button
               onClick={goToBooking}
               className="bg-white text-indigo-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-flex items-center gap-2 shadow-xl"
