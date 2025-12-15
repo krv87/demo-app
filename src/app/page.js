@@ -164,7 +164,7 @@ export default function BookingApp() {
         {/* Footer */}
         <div className="bg-black bg-opacity-20 backdrop-blur-sm mt-20 py-8">
           <div className="max-w-7xl mx-auto px-6 text-center text-gray-300">
-            <p>&copy; 2024 HealthCare+. All rights reserved.</p>
+            <p>&copy; 2025 HealthCare+. All rights reserved.  |   Designed & Developed by Kasun Ravinath.</p>
           </div>
         </div>
       </div>
