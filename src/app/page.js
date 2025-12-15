@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Calendar, Clock, User, Mail, Phone, CheckCircle, ArrowRight, Star, Shield, Users } from 'lucide-react';
+import { Calendar, Clock, User, Mail, Phone, CheckCircle, ArrowRight, Star, Shield, Users, Link} from 'lucide-react';
 
 export default function BookingApp() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -144,7 +144,7 @@ export default function BookingApp() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-20 bg-white/15 backdrop-blur-sm rounded-2xl text-white p-12 text-center">
+          <div className="mt-20 bg-white/15 backdrop-blur-sm rounded-2xl text-white p-12 text-center min-w-fit">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Take Care of Your Health?
             </h2>
@@ -162,9 +162,27 @@ export default function BookingApp() {
         </div>
 
         {/* Footer */}
-        <div className="bg-black bg-opacity-20 backdrop-blur-sm mt-20 py-8">
-          <div className="max-w-7xl mx-auto px-6 text-center text-gray-300">
-            <p>&copy; 2025 HealthCare+. All rights reserved.  |   Designed & Developed by Kasun Ravinath.</p>
+        <div className="bg-black bg-opacity-20 backdrop-blur-sm mt-20">
+
+            <div className="bg-indigo-950/50 backdrop-blur-sm px-6 text-left mr-auto mt-0 min-w-fit">
+              <p className='mb-2.5 pt-10 ml-0 sm:ml-5'>Designed & Developed by Kasun Ravinath Vithanage.</p>
+              <div className='flex flex-row gap-2.5 mb-2.5 pl-2 ml-0 sm:ml-5'>
+                <Phone/>
+                <a href="tel:+94752919291" className=' hover:text-purple-400'>+94 752919291</a>
+              </div>
+              <div className='flex flex-row gap-2.5 mb-2.5 pl-2 ml-0 sm:ml-5'>
+                <Mail/>
+                <a href="mailto:kasunrv.dev@gmail.com" className=' hover:text-purple-400'>kasunrv.dev@gmail.com</a>
+              </div>
+              <div className='flex flex-row gap-2.5 mb-2.5 pl-2 ml-0 sm:ml-5'>
+                <Link/>
+                <a href="https://www.linkedin.com/in/kasun-vithanage-b40139394" target="_blank" rel="noopener noreferrer" 
+                className='hover:underline hover:text-purple-400 pb-5'> Kasun Vithanage at LinkedIn</a>
+              </div>
+            </div>
+
+          <div className="max-w-7xl mx-auto px-6 text-gray-300 text-center p-2">
+            <p>&copy; 2025 HealthCare+. All rights reserved.</p>
           </div>
         </div>
       </div>
