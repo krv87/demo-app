@@ -60,7 +60,7 @@ export default function BookingApp() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900">
         {/* Navigation */}
-        <nav className="px-6 py-4 bg-white bg-opacity-10 backdrop-blur-sm">
+        <nav className="px-6 py-4 bg-indigo-950 bg-opacity-50 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="text-white text-2xl font-bold">HealthCare+</div>
             <button

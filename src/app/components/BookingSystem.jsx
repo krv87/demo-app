@@ -1,10 +1,7 @@
-"use client";
-
 import React, { useState } from 'react';
-import { Calendar, Clock, User, Mail, Phone, CheckCircle, ArrowRight, Star, Shield, Users } from 'lucide-react';
+import { Calendar, Clock, User, Mail, Phone, CheckCircle } from 'lucide-react';
 
-export default function BookingApp() {
-  const [currentPage, setCurrentPage] = useState('home');
+export default function BookingSystem() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     service: '',
@@ -46,132 +43,8 @@ export default function BookingApp() {
       phone: ''
     });
     setIsBooked(false);
-    setCurrentPage('home');
   };
 
-  const goToBooking = () => {
-    setCurrentPage('booking');
-    setStep(1);
-    setIsBooked(false);
-  };
-
-  // Home Page
-  if (currentPage === 'home') {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900">
-        {/* Navigation */}
-        <nav className="px-6 py-4 bg-white bg-opacity-10 backdrop-blur-sm">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="text-white text-2xl font-bold">HealthCare+</div>
-            <button
-              onClick={goToBooking}
-              className="bg-white text-indigo-900 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition"
-            >
-              Book Now
-            </button>
-          </div>
-        </nav>
-
-        {/* Hero Section */}
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Your Health, Our Priority
-            </h1>
-            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-              Experience professional healthcare services with convenient online booking. 
-              Schedule your appointment in minutes.
-            </p>
-            <button
-              onClick={goToBooking}
-              className="bg-white text-indigo-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-flex items-center gap-2 shadow-xl"
-            >
-              Book Your Appointment
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Features */}
-          <div className="grid md:grid-cols-3 gap-8 mt-20">
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl text-white">
-              <div className="bg-white bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Calendar className="w-7 h-7" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Easy Scheduling</h3>
-              <p className="text-gray-200">
-                Book appointments online 24/7. Choose the date and time that works best for you.
-              </p>
-            </div>
-
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl text-white">
-              <div className="bg-white bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Users className="w-7 h-7" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Expert Professionals</h3>
-              <p className="text-gray-200">
-                Our experienced team is dedicated to providing you with the highest quality care.
-              </p>
-            </div>
-
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl text-white">
-              <div className="bg-white bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Shield className="w-7 h-7" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Secure & Private</h3>
-              <p className="text-gray-200">
-                Your information is protected with industry-leading security measures.
-              </p>
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="grid md:grid-cols-3 gap-8 mt-16 text-center">
-            <div className="text-white">
-              <div className="text-5xl font-bold mb-2">10K+</div>
-              <div className="text-gray-200">Happy Patients</div>
-            </div>
-            <div className="text-white">
-              <div className="text-5xl font-bold mb-2">50+</div>
-              <div className="text-gray-200">Expert Doctors</div>
-            </div>
-            <div className="text-white">
-              <div className="text-5xl font-bold mb-2">4.9</div>
-              <div className="text-gray-200 flex items-center justify-center gap-1">
-                <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                Average Rating
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="mt-20 bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-12 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Take Care of Your Health?
-            </h2>
-            <p className="text-gray-200 mb-6 text-lg">
-              Join thousands of satisfied patients who trust us with their healthcare needs.
-            </p>
-            <button
-              onClick={goToBooking}
-              className="bg-white text-indigo-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-flex items-center gap-2"
-            >
-              Get Started Now
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-
-        {/* Footer */}
-        <div className="bg-black bg-opacity-20 backdrop-blur-sm mt-20 py-8">
-          <div className="max-w-7xl mx-auto px-6 text-center text-gray-300">
-            <p>&copy; 2024 HealthCare+. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Booking Pages (existing booking system)
   if (isBooked) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
@@ -202,31 +75,12 @@ export default function BookingApp() {
             </div>
           </div>
           
-          <div className="space-y-3">
-            <button
-              onClick={() => {
-                setStep(1);
-                setFormData({
-                  service: '',
-                  date: '',
-                  time: '',
-                  name: '',
-                  email: '',
-                  phone: ''
-                });
-                setIsBooked(false);
-              }}
-              className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
-            >
-              Book Another Appointment
-            </button>
-            <button
-              onClick={resetBooking}
-              className="w-full bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-300 transition"
-            >
-              Return to Home
-            </button>
-          </div>
+          <button
+            onClick={resetBooking}
+            className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
+          >
+            Book Another Appointment
+          </button>
         </div>
       </div>
     );
@@ -236,12 +90,6 @@ export default function BookingApp() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
-          <button
-            onClick={() => setCurrentPage('home')}
-            className="text-indigo-600 hover:text-indigo-700 font-semibold mb-4 inline-flex items-center gap-2"
-          >
-            ← Back to Home
-          </button>
           <h1 className="text-4xl font-bold text-gray-800 mb-2">Book Your Appointment</h1>
           <p className="text-gray-600">Select a service and choose your preferred time</p>
         </div>
