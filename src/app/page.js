@@ -60,7 +60,7 @@ export default function BookingApp() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900">
         {/* Navigation */}
-        <nav className="px-6 py-4 bg-white bg-opacity-10 backdrop-blur-sm">
+        <nav className="px-6 py-4 bg-indigo-950/50 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="text-white text-2xl font-bold">HealthCare+</div>
             <button
@@ -93,8 +93,8 @@ export default function BookingApp() {
 
           {/* Features */}
           <div className="grid md:grid-cols-3 gap-8 mt-20">
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl text-white">
-              <div className="bg-white bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+            <div className="bg-white/15 backdrop-blur-sm p-8 rounded-2xl text-white">
+              <div className="bg-white/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <Calendar className="w-7 h-7" />
               </div>
               <h3 className="text-xl font-bold mb-3">Easy Scheduling</h3>
@@ -103,8 +103,8 @@ export default function BookingApp() {
               </p>
             </div>
 
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl text-white">
-              <div className="bg-white bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+            <div className="bg-white/15 backdrop-blur-sm p-8 rounded-2xl text-white">
+              <div className="bg-white/20 bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <Users className="w-7 h-7" />
               </div>
               <h3 className="text-xl font-bold mb-3">Expert Professionals</h3>
@@ -113,8 +113,8 @@ export default function BookingApp() {
               </p>
             </div>
 
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl text-white">
-              <div className="bg-white bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+            <div className="bg-white/15 backdrop-blur-sm p-8 rounded-2xl text-white">
+              <div className="bg-white/20 bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <Shield className="w-7 h-7" />
               </div>
               <h3 className="text-xl font-bold mb-3">Secure & Private</h3>
@@ -144,7 +144,7 @@ export default function BookingApp() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-20 bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-12 text-center">
+          <div className="mt-20 bg-white/15 backdrop-blur-sm rounded-2xl text-white p-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Take Care of Your Health?
             </h2>
