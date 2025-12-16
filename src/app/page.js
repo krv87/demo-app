@@ -3,6 +3,9 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, User, Mail, Phone, CheckCircle, ArrowRight, Star, Shield, Users, Link} from 'lucide-react';
 import { TextAnimate } from './components/TextMotion';
+import './page.css';
+import CountUp from './components/CountUp';
+import FadeIn from './components/FadeInElement'
 
 export default function BookingApp() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -80,89 +83,119 @@ export default function BookingApp() {
               firstText="Your Health, Our Priority"
               lastText="Experience professional healthcare services with convenient online booking. Schedule your appointment in minutes."
             />
-            <button
-              onClick={goToBooking}
-              className="bg-white text-indigo-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-flex items-center gap-2 shadow-xl"
-            >
-              Book Your Appointment
-              <ArrowRight className="w-5 h-5" />
-            </button>
+
+            <FadeIn target={
+              <button
+                onClick={goToBooking}
+                className="bg-white text-indigo-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-flex items-center gap-2 shadow-xl"
+              >
+                Book Your Appointment
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            }
+            duration={800}
+            delay={1000}
+            />
           </div>
 
           {/* Features */}
           <div className="grid md:grid-cols-3 gap-8 mt-20">
-            <div className="bg-white/15 backdrop-blur-sm p-8 rounded-2xl text-white">
-              <div className="bg-white/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Calendar className="w-7 h-7" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Easy Scheduling</h3>
-              <p className="text-gray-200">
-                Book appointments online 24/7. Choose the date and time that works best for you.
-              </p>
-            </div>
 
-            <div className="bg-white/15 backdrop-blur-sm p-8 rounded-2xl text-white">
-              <div className="bg-white/20 bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Users className="w-7 h-7" />
+            <FadeIn target={
+              <div className="bg-white/15 backdrop-blur-sm p-8 rounded-2xl text-white benefits-box">
+                <div className="bg-white/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                  <Calendar className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Easy Scheduling</h3>
+                <p className="text-gray-200">
+                  Book appointments online 24/7. Choose the date and time that works best for you.
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-3">Expert Professionals</h3>
-              <p className="text-gray-200">
-                Our experienced team is dedicated to providing you with the highest quality care.
-              </p>
-            </div>
+            }
+              direction='left'
+              delay={1200}
+              threshold={0.1}
+            />
 
-            <div className="bg-white/15 backdrop-blur-sm p-8 rounded-2xl text-white">
-              <div className="bg-white/20 bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Shield className="w-7 h-7" />
+            <FadeIn target={
+              <div className="bg-white/15 backdrop-blur-sm p-8 rounded-2xl text-white benefits-box">
+                <div className="bg-white/20 bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                  <Users className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Expert Professionals</h3>
+                <p className="text-gray-200">
+                  Our experienced team is dedicated to providing you with the highest quality care.
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-3">Secure & Private</h3>
-              <p className="text-gray-200">
-                Your information is protected with industry-leading security measures.
-              </p>
-            </div>
+            }
+            direction='left'
+            delay={1300}
+            threshold={0.1}
+            />
+
+            <FadeIn target={
+              <div className="bg-white/15 backdrop-blur-sm p-8 rounded-2xl text-white benefits-box">
+                <div className="bg-white/20 bg-opacity-20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                  <Shield className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Secure & Private</h3>
+                <p className="text-gray-200 translate-y">
+                  Your information is protected with industry-leading security measures.
+                </p>
+              </div>
+            }
+            direction='left'
+            delay={1400}
+            threshold={0.1}
+            />
           </div>
 
           {/* Stats */}
           <div className="grid md:grid-cols-3 gap-8 mt-16 text-center">
             <div className="text-white">
-              <div className="text-5xl font-bold mb-2">10K+</div>
-              <div className="text-gray-200">Happy Patients</div>
+              <div className="text-5xl font-bold mb-2"> <CountUp target="100"/>K+</div>
+              <FadeIn target={"Happy Patients"}/>
             </div>
             <div className="text-white">
-              <div className="text-5xl font-bold mb-2">50+</div>
-              <div className="text-gray-200">Expert Doctors</div>
+              <div className="text-5xl font-bold mb-2"><CountUp target="50" delay={800}/>+</div>
+              <FadeIn target={"Expert Doctors"} delay={800}/>
             </div>
             <div className="text-white">
-              <div className="text-5xl font-bold mb-2">4.9</div>
+              <div className="text-5xl font-bold mb-2"><CountUp target="4.9" duration={500} delay={1500}/></div>
               <div className="text-gray-200 flex items-center justify-center gap-1">
-                <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                Average Rating
+                <FadeIn target={<Star className="w-5 h-5 fill-yellow-400 text-yellow-400"/>} delay={1500}/>
+                <FadeIn target={"Average Rating"} delay={1500}/>
               </div>
             </div>
           </div>
 
           {/* CTA Section */}
-          <div className="mt-20 bg-white/15 backdrop-blur-sm rounded-2xl text-white p-12 text-center min-w-fit">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Take Care of Your Health?
-            </h2>
-            <p className="text-gray-200 mb-6 text-lg">
-              Join thousands of satisfied patients who trust us with their healthcare needs.
-            </p>
-            <button
-              onClick={goToBooking}
-              className="bg-white text-indigo-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-flex items-center gap-2"
-            >
-              Get Started Now
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
+          <FadeIn target={
+            <div className="mt-20 bg-white/15 backdrop-blur-sm rounded-2xl text-white p-12 text-center min-w-fit">
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Ready to Take Care of Your Health?
+              </h2>
+              <p className="text-gray-200 mb-6 text-lg">
+                Join thousands of satisfied patients who trust us with their healthcare needs.
+              </p>
+              <button
+                onClick={goToBooking}
+                className="bg-white text-indigo-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-flex items-center gap-2"
+              >
+                Get Started Now
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+          }
+          delay={200}
+          threshold={0.3}
+          />
         </div>
 
         {/* Footer */}
         <div className="bg-black bg-opacity-20 backdrop-blur-sm mt-20">
 
-            <div className="bg-indigo-950/50 backdrop-blur-sm px-6 text-left mr-auto mt-0 min-w-fit">
+            <div className="bg-indigo-950/50 backdrop-blur-sm text-white px-6 text-left mr-auto mt-0 min-w-fit">
               <p className='mb-2.5 pt-10 ml-0 sm:ml-5'>Designed & Developed by Kasun Ravinath Vithanage.</p>
               <div className='flex flex-row gap-2.5 mb-2.5 pl-2 ml-0 sm:ml-5'>
                 <Phone/>
