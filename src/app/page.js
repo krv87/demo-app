@@ -112,15 +112,15 @@ export default function BookingApp() {
           {/* Stats */}
             <div className="grid md:grid-cols-3 gap-8 mt-16 text-center">
               <div className="text-white">
-                <div className="text-5xl font-bold mb-2"> <CountUp target="100"/>K+</div>
+                <div className="text-5xl font-bold mb-2"> <CountUp target="100" index={0}/>K+</div>
                 <FadeIn target={"Happy Patients"} delay='medium' index={0} trigger={true}/>
               </div>
               <div className="text-white">
-                <div className="text-5xl font-bold mb-2"><CountUp target="50" delay={800}/>+</div>
+                <div className="text-5xl font-bold mb-2"><CountUp target="50" index={1}/>+</div>
                 <FadeIn target={"Expert Doctors"} delay='medium' index={1} trigger={true}/>
               </div>
               <div className="text-white">
-                <div className="text-5xl font-bold mb-2"><CountUp target="4.9" duration={500} delay={1500}/></div>
+                <div className="text-5xl font-bold mb-2"><CountUp target="4.9" index={2}/></div>
                 <div className="text-gray-200 flex items-center justify-center gap-1">
                   <FadeIn target={<Star className="w-5 h-5 fill-yellow-400 text-yellow-400"/>} delay='medium' index={2} trigger={true}/>
                   <FadeIn target={"Average Rating"} delay='medium' index={2} trigger={true}/>

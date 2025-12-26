@@ -4,13 +4,23 @@ function easeOutCubic(t) {
   return 1 - Math.pow(1 - t, 3);
 }
 
-function CountUp({ target, duration = 1000, delay = 0 }) {
+function CountUp({ target, duration = 1000, delay = 600, index }) {
   const [count, setCount] = useState(0);
   const [start, setStart] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => setMounted(true), []);
+
+  // Detect mobile view
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   
   useEffect(() => {
     if (!mounted) return;
@@ -45,10 +55,10 @@ function CountUp({ target, duration = 1000, delay = 0 }) {
       }
 
       requestAnimationFrame(update);
-    }, delay);
+    }, isMobile ? 0 : (delay * index));
 
     return () => clearTimeout(timeout);
-  }, [start, mounted, target, duration, delay]);
+  }, [start, mounted, target, duration, delay, isMobile, index]);
 
   return <span ref={ref}>{count}</span>;
 }
